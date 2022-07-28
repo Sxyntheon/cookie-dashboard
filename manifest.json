@@ -1,0 +1,25 @@
+{
+  "name": "Cookie Dashboard",
+  "description": "Have you ever wondered how many cookies websites store about you? The cookie dashboard gives you the answer for every website out there. You can get an instant look at saved cookies and a count of previous visits.",
+  "permissions" : [
+    "storage",
+    "tabs"
+  ],
+  "icons": {
+    "16": "./icons/16.png",
+    "48": "./icons/48.png",
+    "128": "./icons/128.png"
+  },
+  "version": "1.3",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+    "matches": ["<all_urls>"],
+    "js": ["main.js"]
+    }
+  ],
+  "action": {
+    "default_:title": "Cookie Logger",
+    "default_popup": "popup.html"
+  }
+}
