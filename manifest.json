@@ -3,7 +3,12 @@
   "description": "Have you ever wondered how many cookies websites store about you? The cookie dashboard gives you the answer for every website out there. You can get an instant look at saved cookies and a count of previous visits.",
   "permissions" : [
     "storage",
-    "tabs"
+    "tabs",
+    "cookies"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ],
   "icons": {
     "16": "./icons/16.png",

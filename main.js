@@ -1,11 +1,4 @@
 //main.js
-async function getWebsiteData() {
-    const address = document.domain;
-    const cookies = document.cookie.split(";").length;
-    let visits = await getVisits();
-    let data = { "address": address, "cookies": cookies, "visits": visits };
-    return data;
-};
 async function getVisits() {
     let visits;
     let result = await chrome.storage.sync.get([document.domain]);
@@ -15,17 +8,17 @@ async function getVisits() {
     else {
         visits = 1;
     }
-    return visits;
+    return  {visits: visits };
 };
 function logSite(data) {
     let setData = {};
-    setData[data.address] = data;
+    setData[document.domain] = data;
     chrome.storage.sync.set(setData, function() {
         console.log("succesfully logged the following values to storage:");
-        console.log(data)
+        console.log(setData)
     });
 };
 async function main() {
-    logSite(await getWebsiteData());
+    logSite(await getVisits());
 };
 main();

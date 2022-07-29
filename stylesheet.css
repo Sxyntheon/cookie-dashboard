@@ -1,4 +1,6 @@
 html {
+    font-size: 13px;
+    overflow: visible;
     background-color: 	rgb(205, 127, 50);
     width: 250px;
     text-align: center;
@@ -18,17 +20,41 @@ p {
     font-weight: bolder;
 }
 #visits {
-    font-size: 200%;
+    font-size: 300%;
     font-weight: bolder;
 }
 #logo {
     display: block;
     margin: auto;
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
 }
 #cookie-icon {
     display: inline-block;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
+}
+#deleteCookies {
+    font-weight: bolder;
+    padding: 3.5%;
+    background-color: rgb(255, 150, 46);
+    border: none;
+    border-radius: 10px;
+    font-size: 250%;
+}
+#deleteIcon {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+#resetVisits {
+    font-weight: bolder;
+    padding: 4.5%;
+    background-color: rgb(255, 150, 46);
+    border: none;
+    border-radius: 10px;
+    font-size: 250%;
+    margin-bottom: 5%;
 }
