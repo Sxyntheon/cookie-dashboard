@@ -1,9 +1,9 @@
 //main.js
 async function getVisits() {
     let visits;
-    let result = await chrome.storage.sync.get([document.domain]);
-    if (result[document.domain]) {
-        visits = result[document.domain].visits += 1;
+    let result = await chrome.storage.sync.get([location.hostname]);
+    if (result[location.hostname]) {
+        visits = result[location.hostname].visits += 1;
     } 
     else {
         visits = 1;
@@ -12,7 +12,7 @@ async function getVisits() {
 };
 function logSite(data) {
     let setData = {};
-    setData[document.domain] = data;
+    setData[location.hostname] = data;
     chrome.storage.sync.set(setData, function() {
         console.log("succesfully logged the following values to storage:");
         console.log(setData)
